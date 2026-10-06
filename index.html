@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<title>青序后台</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./app.css" />
+    <link rel="icon" href="./favicon.ico" />
+</head>
+
+<body style="margin: 0; overflow: hidden">
+<div id="out">
+    <div class="admin-splash">
+        <div class="admin-splash-card">
+            <div class="admin-splash-logo">青序</div>
+            <div class="admin-splash-name">青序后台</div>
+            <div class="admin-splash-spinner"></div>
+            <div id="admin-splash-status" class="admin-splash-status">正在加载…</div>
+        </div>
+    </div>
+    <div id="admin-splash-error" class="admin-splash-error" hidden>
+        <strong>应用启动失败</strong>
+        <p>主界面未能加载，可能的原因：浏览器缓存了旧版本、或运行时下载失败。请刷新页面重试；若仍然失败，请把下方错误信息发给开发者。</p>
+        <pre id="admin-splash-error-text"></pre>
+    </div>
+</div>
+<script type='module' src="./main.js"></script>
+</body>
+
+</html>

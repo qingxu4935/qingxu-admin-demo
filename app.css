@@ -1,0 +1,123 @@
+/* HTML styles for the splash screen (shown until the WASM app attaches) */
+.admin-splash {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: white;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.admin-splash-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.admin-splash-logo {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    margin-right: -0.25em;
+    color: #1b2a4e;
+}
+
+.admin-splash-name {
+    font-size: 0.9rem;
+    opacity: 0.65;
+    color: #1b2a4e;
+}
+
+.admin-splash-spinner {
+    width: 28px;
+    height: 28px;
+    margin-top: 8px;
+    border: 3px solid rgba(27, 42, 78, 0.18);
+    border-top-color: #0D6EFD;
+    border-radius: 50%;
+    animation: admin-spin 0.9s linear infinite;
+}
+
+.admin-splash-status {
+    font-size: 0.85rem;
+    color: #1b2a4e;
+    opacity: 0.75;
+}
+
+.admin-splash-error {
+    position: absolute;
+    inset: 0;
+    background: white;
+    color: #8b1e1e;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    text-align: center;
+}
+
+.admin-splash-error[hidden] {
+    display: none;
+}
+
+.admin-splash-error p {
+    max-width: 640px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.admin-splash-error pre {
+    max-width: 860px;
+    max-height: 40vh;
+    overflow: auto;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.75rem;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+@keyframes admin-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-color-scheme: dark) {
+    .admin-splash {
+        background: #12182b;
+    }
+
+    .admin-splash-logo,
+    .admin-splash-name,
+    .admin-splash-status {
+        color: #f2f4f8;
+    }
+
+    .admin-splash-spinner {
+        border-color: rgba(242, 244, 248, 0.2);
+        border-top-color: #7aa2ff;
+    }
+
+    .admin-splash-error {
+        background: #12182b;
+    }
+
+    .admin-splash-error p {
+        color: #c9cedb;
+    }
+
+    .admin-splash-error pre {
+        background: #1c2338;
+        border-color: #333d5c;
+        color: #e8b4b4;
+    }
+}
